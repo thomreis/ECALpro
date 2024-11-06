@@ -125,7 +125,7 @@ if useHLTFilter:
     process.AlcaP0Filter = copy.deepcopy(hltHighLevel)
     process.AlcaP0Filter.throw = cms.bool(False)
     process.AlcaP0Filter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
-    process.AlcaP0Filter.HLTPaths = ["AlCa_EcalPi0E*"]
+    process.AlcaP0Filter.HLTPaths = ["AlCa_EcalPi0E*", "AlCa_HIEcalPi0E*"]
 
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
