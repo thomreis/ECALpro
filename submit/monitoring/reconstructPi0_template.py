@@ -167,8 +167,8 @@ process.analyzerFillEpsilon.calibMapPath = cms.untracked.string('/eos/cms/store/
 
 process.analyzerFillEpsilon.Endc_x_y                        = cms.untracked.string('CalibCode/FillEpsilonPlot/data/Endc_x_y_ring.txt')
 process.analyzerFillEpsilon.HLTResults                  = cms.untracked.bool(True)
-process.analyzerFillEpsilon.HLTResultsNameEB            = cms.untracked.string('AlCa_EcalPi0EB')
-process.analyzerFillEpsilon.HLTResultsNameEE            = cms.untracked.string('AlCa_EcalPi0EE')
+process.analyzerFillEpsilon.HLTResultsNameEB            = cms.untracked.string('EcalPi0EB') # the HLT path should contain this pattern. The Alca_ prefix is omitted to allow paths like Alca_HIEcalPi0EB as well
+process.analyzerFillEpsilon.HLTResultsNameEE            = cms.untracked.string('EcalPi0EE') # the HLT path should contain this pattern. The Alca_ prefix is omitted to allow paths like Alca_HIEcalPi0EE as well
 process.analyzerFillEpsilon.RemoveDead_Flag             = cms.untracked.bool(True)
 process.analyzerFillEpsilon.RemoveDead_Map              = cms.untracked.string('')
 process.analyzerFillEpsilon.Are_pi0                 = cms.untracked.bool(True)
