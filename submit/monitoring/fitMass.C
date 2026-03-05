@@ -1,4 +1,4 @@
-vector<double> fitMass(TH1F* h, int ick, string prefix="", bool isEB=true)
+vector<double> fitMass(TH1F* h, int ick, string prefix="", string postfix="EB", bool isEB=true)
 {
 
     ///extracted from FitEpsilonPlot.cc
@@ -76,8 +76,7 @@ vector<double> fitMass(TH1F* h, int ick, string prefix="", bool isEB=true)
         mean.setRange( 0.1, maxMassForGaussianMean);
         mean.setVal(0.13);
         sigma.setRange(0.005,0.020);
-    }
-    if(isEB){
+    } else {
         mean.setRange(0.105, maxMassForGaussianMean);
         sigma.setRange(0.003,0.030);
     }
@@ -259,8 +258,8 @@ vector<double> fitMass(TH1F* h, int ick, string prefix="", bool isEB=true)
     lat.DrawLatex(xmin,yhi-5.*ypass, line.c_str());
 
     canvas->RedrawAxis("sameaxis");
-    canvas->Print(Form("%s/pi0_mass_fit_chunck_%s_%d.png", prefix.c_str(), isEB ? "EB" : "EE", ick));
-    canvas->Print(Form("%s/pi0_mass_fit_chunck_%s_%d.root", prefix.c_str(), isEB ? "EB" : "EE",ick));
+    canvas->Print(Form("%s/pi0_mass_fit_chunck_%s_%d.png", prefix.c_str(), postfix.c_str(), ick));
+    canvas->Print(Form("%s/pi0_mass_fit_chunck_%s_%d.root", prefix.c_str(), postfix.c_str(), ick));
 
     return {mean.getVal()*1000, mean.getError()*1000};
 }

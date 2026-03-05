@@ -60,7 +60,7 @@ def collectEvents(inputFileNameList, inputTreeName, outputPath, nPi0EB, nPi0EE):
 
             # fit
             print("fitting")
-            res = ROOT.fitMass(hist, ick, str(os.path.dirname(outputPath))+'/', part=="EB")
+            res = ROOT.fitMass(hist, ick, str(os.path.dirname(outputPath))+'/', part, part=="EB")
 
             # output data: mean time, EB/EE, mass, mass_unc
             outdata.append(f'{mean_time} {part} {res[0]} {res[1]}')
